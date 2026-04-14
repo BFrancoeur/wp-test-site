@@ -79,11 +79,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* ── Who We Serve / Why We Do It — two-column image sections ─────────────────── */
 
+.two-col-section__image {
+  align-self: stretch;
+  overflow: hidden;
+  min-height: 20rem;
+}
+
 .two-col-section__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--border-radius-lg);
+  display: block;
 }
 
 .two-col-section__heading {

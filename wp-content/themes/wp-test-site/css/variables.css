@@ -75,7 +75,7 @@
   --font-size-h2:              clamp(1.25rem,  0.375rem  + 2.917vw, 3rem);    /* 20px → 48px */
   --font-size-h3:              clamp(1.125rem, 0.5625rem + 1.875vw, 2.25rem); /* 18px → 36px */
   --font-size-h4:              clamp(1rem,     0.625rem  + 1.25vw,  1.75rem); /* 16px → 28px */
-  --font-size-base:            clamp(0.875rem, 0.5625rem + 1.042vw, 1.5rem);  /* 14px → 24px */
+  --font-size-base:            clamp(0.875rem, 0.5625rem + 1.042vw, 1.3125rem); /* 14px → 21px */
   --font-size-sm:              clamp(0.75rem,  0.6875rem + 0.208vw, 0.875rem);/* 12px → 14px */
 
   /* Small text usage:
