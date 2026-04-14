@@ -108,7 +108,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  padding: var(--space-3xl) var(--space-2xl);
+  padding: var(--space-3xl) var(--space-4xl);
 }
 
 .two-col-section__heading {
@@ -127,7 +127,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 
   .two-col-section__text {
-    padding: var(--space-2xl) var(--space-lg);
+    padding: var(--space-2xl) var(--space-2xl);
   }
 
   /* Stack image below text on mobile for both sections */
