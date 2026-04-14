@@ -1,0 +1,112 @@
+/*
+ * components/service-card.css
+ * Service card — icon, body, and footer with CTA.
+ * Used inside a layout--wrap grid on the services section.
+ *
+ * Structure:
+ *   <div class="service-card">
+ *     <div class="service-card__icon">
+ *       <img>
+ *     </div>
+ *     <div class="service-card__body">
+ *       <h3 class="service-card__heading">
+ *       <p class="service-card__description">
+ *     </div>
+ *     <div class="service-card__footer">
+ *       <a class="btn btn--medium btn--outline">
+ *     </div>
+ *   </div>
+ */
+
+
+/* ── Card Wrapper ────────────────────────────────────────────────────────────── */
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--wp-white);
+  border: var(--border-width-sm) solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
+  transition:
+    box-shadow  var(--transition-base),
+    transform   var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+}
+
+
+/* ── Icon ────────────────────────────────────────────────────────────────────── */
+
+.service-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+  flex-shrink: 0;
+}
+
+.service-card__icon img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+
+/* ── Body ────────────────────────────────────────────────────────────────────── */
+
+.service-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.service-card__heading {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  color: var(--color-text);
+}
+
+.service-card__description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-muted);
+}
+
+
+/* ── Footer ──────────────────────────────────────────────────────────────────── */
+
+.service-card__footer {
+  margin-top: auto;
+}
+
+.service-card__footer .btn {
+  width: 100%;
+}
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .service-card {
+    padding: var(--space-lg);
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+}
