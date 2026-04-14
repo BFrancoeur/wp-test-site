@@ -170,6 +170,14 @@ function wp_test_site_scripts() {
 		_S_VERSION
 	);
 
+	// Component: site header.
+	wp_enqueue_style(
+		'dovetail-site-header',
+		get_template_directory_uri() . '/css/components/site-header.css',
+		[ 'dovetail-utilities' ],
+		_S_VERSION
+	);
+
 	// Component: buttons.
 	wp_enqueue_style(
 		'dovetail-btn',

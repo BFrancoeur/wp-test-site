@@ -2,13 +2,12 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * Outputs the <head> section, opens <body>, and renders the site header.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WP_Test_Site
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -16,44 +15,61 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<a class="sr-only" href="#main-content"><?php esc_html_e( 'Skip to content', 'wp-test-site' ); ?></a>
+
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-test-site' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$wp_test_site_description = get_bloginfo( 'description', 'display' );
-			if ( $wp_test_site_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $wp_test_site_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-header__inner content-wrap">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wp-test-site' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
+			<!-- Branding -->
+			<div class="site-header__branding">
+				<?php if ( has_custom_logo() ) : ?>
+					<div class="site-header__logo">
+						<?php the_custom_logo(); ?>
+					</div>
+				<?php else : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-header__site-name" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				<?php endif; ?>
+
+				<?php
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-header__tagline"><?php echo esc_html( $description ); ?></p>
+				<?php endif; ?>
+			</div><!-- .site-header__branding -->
+
+			<!-- Primary Navigation -->
+			<nav id="site-navigation" class="site-header__nav" role="navigation" aria-label="<?php esc_attr_e( 'Primary Navigation', 'wp-test-site' ); ?>">
+				<button
+					class="site-header__menu-toggle"
+					aria-controls="primary-menu"
+					aria-expanded="false"
+					aria-label="<?php esc_attr_e( 'Toggle navigation', 'wp-test-site' ); ?>"
+				>
+					<span class="site-header__menu-toggle-bar"></span>
+					<span class="site-header__menu-toggle-bar"></span>
+					<span class="site-header__menu-toggle-bar"></span>
+				</button>
+
+				<?php
+				wp_nav_menu( [
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+					'container'      => false,
+					'menu_class'     => 'site-header__menu',
+					'fallback_cb'    => false,
+				] );
+				?>
+			</nav><!-- .site-header__nav -->
+
+		</div><!-- .site-header__inner -->
 	</header><!-- #masthead -->
