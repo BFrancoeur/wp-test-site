@@ -1,0 +1,165 @@
+/*
+ * components/site-footer.css
+ * Site footer — branding, footer nav, copyright row.
+ *
+ * Structure:
+ *   <footer class="site-footer">
+ *     <div class="site-footer__inner content-wrap">
+ *       <div class="site-footer__top">
+ *         <div class="site-footer__branding">
+ *           <a class="site-footer__site-name"> OR <div class="site-footer__logo">
+ *           <p class="site-footer__tagline">
+ *         </div>
+ *         <nav class="site-footer__nav">
+ *           <ul class="site-footer__menu">
+ *         </nav>
+ *       </div>
+ *       <div class="site-footer__bottom">
+ *         <p class="site-footer__copyright">
+ *         <p class="site-footer__credits">
+ *       </div>
+ *     </div>
+ *   </footer>
+ */
+
+
+/* ── Footer Wrapper ──────────────────────────────────────────────────────────── */
+
+.site-footer {
+  background-color: var(--color-dark-neutral);
+  color: var(--color-surface);
+  padding-block: var(--space-2xl) var(--space-xl);
+}
+
+
+/* ── Inner ───────────────────────────────────────────────────────────────────── */
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+
+/* ── Top Row ─────────────────────────────────────────────────────────────────── */
+
+.site-footer__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2xl);
+}
+
+
+/* ── Branding ────────────────────────────────────────────────────────────────── */
+
+.site-footer__branding {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 20rem;
+}
+
+.site-footer__logo img {
+  height: 2.5rem;
+  width: auto;
+  /* Invert logo to white on dark background if using a dark logo */
+  filter: brightness(0) invert(1);
+}
+
+.site-footer__site-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--wp-white);
+  text-decoration: none;
+  line-height: var(--line-height-tight);
+  transition: color var(--transition-fast);
+}
+
+.site-footer__site-name:hover {
+  color: var(--color-secondary);
+}
+
+.site-footer__tagline {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+
+/* ── Footer Nav ──────────────────────────────────────────────────────────────── */
+
+.site-footer__menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-xl);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__menu a {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-surface);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-wide);
+  transition: color var(--transition-fast);
+}
+
+.site-footer__menu a:hover {
+  color: var(--color-secondary);
+}
+
+
+/* ── Bottom Row ──────────────────────────────────────────────────────────────── */
+
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: var(--border-width-sm) solid rgba(176, 181, 182, 0.2);
+}
+
+.site-footer__copyright,
+.site-footer__credits {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.site-footer__copyright a,
+.site-footer__credits a {
+  color: var(--color-surface);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-footer__copyright a:hover,
+.site-footer__credits a:hover {
+  color: var(--color-secondary);
+}
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .site-footer__top {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .site-footer__menu {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}

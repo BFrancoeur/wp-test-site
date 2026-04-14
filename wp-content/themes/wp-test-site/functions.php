@@ -50,6 +50,7 @@ function wp_test_site_setup() {
 	register_nav_menus(
 		[
 			'menu-1' => esc_html__( 'Primary', 'wp-test-site' ),
+			'menu-2' => esc_html__( 'Footer', 'wp-test-site' ),
 		]
 	);
 
@@ -174,6 +175,14 @@ function wp_test_site_scripts() {
 	wp_enqueue_style(
 		'dovetail-site-header',
 		get_template_directory_uri() . '/css/components/site-header.css',
+		[ 'dovetail-utilities' ],
+		_S_VERSION
+	);
+
+	// Component: site footer.
+	wp_enqueue_style(
+		'dovetail-site-footer',
+		get_template_directory_uri() . '/css/components/site-footer.css',
 		[ 'dovetail-utilities' ],
 		_S_VERSION
 	);
