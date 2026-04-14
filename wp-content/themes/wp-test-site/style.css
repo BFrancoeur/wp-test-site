@@ -79,10 +79,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* ── Who We Serve / Why We Do It — two-column image sections ─────────────────── */
 
+/* Full-width grid — no content-wrap, no gap, image fills its column */
+.who-we-serve .layout--cols-2,
+.why-we-do-it .layout--cols-2 {
+  gap: 0;
+}
+
 .two-col-section__image {
   align-self: stretch;
   overflow: hidden;
-  min-height: 20rem;
+  margin: 0;
+  padding: 0;
+  min-height: 28rem;
 }
 
 .two-col-section__image img {
@@ -90,6 +98,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   height: 100%;
   object-fit: cover;
   display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text column — vertically centered, left-aligned, with internal padding */
+.two-col-section__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: var(--space-3xl) var(--space-2xl);
 }
 
 .two-col-section__heading {
@@ -98,7 +117,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .two-col-section__body {
   color: var(--color-text-muted);
-  line-height: var(--line-height-loose);
+  line-height: var(--line-height-base);
 }
 
 @media (max-width: 767px) {
@@ -107,14 +126,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     grid-template-columns: 1fr;
   }
 
-  /* Stack image below text on mobile for both sections */
-  .why-we-do-it .two-col-section__image {
-    order: 2;
+  .two-col-section__text {
+    padding: var(--space-2xl) var(--space-lg);
   }
 
-  .why-we-do-it .two-col-section__text {
-    order: 1;
-  }
+  /* Stack image below text on mobile for both sections */
+  .why-we-do-it .two-col-section__image { order: 2; }
+  .why-we-do-it .two-col-section__text  { order: 1; }
 }
 
 

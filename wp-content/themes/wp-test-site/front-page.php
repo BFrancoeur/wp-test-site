@@ -142,9 +142,8 @@ get_header();
 
 	<!-- ── Who We Serve ──────────────────────────────────────────────────────── -->
 
-	<section class="section section--who-we-serve who-we-serve py-2xl">
-		<div class="content-wrap">
-			<div class="layout layout--cols-2 gap-2xl items-center">
+	<section class="section section--who-we-serve who-we-serve">
+		<div class="layout layout--cols-2">
 				<div class="two-col-section__text">
 					<h2 class="two-col-section__heading"><?php esc_html_e( 'Who We Serve', 'wp-test-site' ); ?></h2>
 					<p class="two-col-section__body">
@@ -157,16 +156,14 @@ get_header();
 						alt="<?php esc_attr_e( 'Who we serve', 'wp-test-site' ); ?>"
 					>
 				</div>
-			</div>
 		</div>
 	</section>
 
 
 	<!-- ── Why We Do It ──────────────────────────────────────────────────────── -->
 
-	<section class="section section--why-we-do-it why-we-do-it py-2xl">
-		<div class="content-wrap">
-			<div class="layout layout--cols-2 gap-2xl items-center">
+	<section class="section section--why-we-do-it why-we-do-it">
+		<div class="layout layout--cols-2">
 				<div class="two-col-section__image">
 					<img
 						src="https://picsum.photos/600/480?random=20"
@@ -179,7 +176,6 @@ get_header();
 						<?php esc_html_e( 'We got into this work because we believed business could be done differently — with more honesty, more care, and more of a long-term view. Too many organizations are sold quick fixes that don\'t hold up. We\'re here to build things that last. Every strategy we develop, every brand we shape, and every campaign we launch is grounded in a genuine desire to see our clients succeed. Not just in the short term, but in ways that compound over time. That\'s what gets us out of bed in the morning. That\'s why we do it.', 'wp-test-site' ); ?>
 					</p>
 				</div>
-			</div>
 		</div>
 	</section>
 
