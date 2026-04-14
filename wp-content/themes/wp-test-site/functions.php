@@ -162,7 +162,15 @@ function wp_test_site_scripts() {
 		_S_VERSION
 	);
 
-	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), [ 'dovetail-base' ], _S_VERSION );
+	// Utility classes — spacing, layout, text, color helpers.
+	wp_enqueue_style(
+		'dovetail-utilities',
+		get_template_directory_uri() . '/css/utilities.css',
+		[ 'dovetail-base' ],
+		_S_VERSION
+	);
+
+	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), [ 'dovetail-utilities' ], _S_VERSION );
 	wp_style_add_data( 'wp-test-site-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wp-test-site-navigation', get_template_directory_uri() . '/js/navigation.js', [], _S_VERSION, true );
