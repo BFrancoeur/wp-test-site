@@ -53,6 +53,7 @@
   background-color: var(--color-surface);
   border-radius: var(--border-radius-md);
   margin-bottom: var(--space-lg);
+  margin-inline: auto;
   flex-shrink: 0;
 }
 
