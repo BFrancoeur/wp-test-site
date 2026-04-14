@@ -53,6 +53,84 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 
+/* ── About Section ───────────────────────────────────────────────────────────── */
+
+.about {
+  background-color: var(--color-primary);
+  color: var(--wp-white);
+}
+
+.about__inner {
+  max-width: var(--content-width-narrow);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about__heading {
+  color: var(--wp-white);
+  margin-bottom: var(--space-lg);
+}
+
+.about__body {
+  color: rgba(252, 255, 240, 0.9);
+  line-height: var(--line-height-loose);
+}
+
+
+/* ── Who We Serve / Why We Do It — two-column image sections ─────────────────── */
+
+.two-col-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+}
+
+.two-col-section__heading {
+  margin-bottom: var(--space-lg);
+}
+
+.two-col-section__body {
+  color: var(--color-text-muted);
+  line-height: var(--line-height-loose);
+}
+
+@media (max-width: 767px) {
+  .who-we-serve .layout--cols-2,
+  .why-we-do-it .layout--cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack image below text on mobile for both sections */
+  .why-we-do-it .two-col-section__image {
+    order: 2;
+  }
+
+  .why-we-do-it .two-col-section__text {
+    order: 1;
+  }
+}
+
+
+/* ── Social Proof Section ────────────────────────────────────────────────────── */
+
+.social-proof {
+  background-color: var(--color-surface);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .social-proof .layout--cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .social-proof .layout--cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ── Services Section ────────────────────────────────────────────────────────── */
 
 .services__title {

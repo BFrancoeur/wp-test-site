@@ -127,11 +127,15 @@ get_header();
 
 
 	<!-- ── About ─────────────────────────────────────────────────────────────── -->
-	<!-- TODO: wire up with page content or ACF fields -->
 
 	<section class="section section--about about py-2xl">
 		<div class="content-wrap">
-			<p class="text-muted text-center"><?php esc_html_e( '[About section — coming soon]', 'wp-test-site' ); ?></p>
+			<div class="about__inner">
+				<h2 class="about__heading"><?php esc_html_e( 'Who We Are', 'wp-test-site' ); ?></h2>
+				<p class="about__body">
+					<?php esc_html_e( 'We are a team of strategists, creatives, and builders who believe great work starts with a clear understanding of who you\'re trying to reach — and why it matters. For over a decade, we\'ve partnered with businesses of all sizes, from ambitious startups to established enterprises, helping them clarify their vision, sharpen their message, and build the digital presence they deserve. We don\'t believe in one-size-fits-all solutions. Every engagement begins with listening: to your goals, your challenges, and the people you serve. What we bring is a rare combination of strategic thinking and hands-on execution — a team that sees the big picture and does the work to bring it to life. We\'re proud of the relationships we\'ve built along the way, and we\'d love to add yours to the list.', 'wp-test-site' ); ?>
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -140,7 +144,20 @@ get_header();
 
 	<section class="section section--who-we-serve who-we-serve py-2xl">
 		<div class="content-wrap">
-			<p class="text-muted text-center"><?php esc_html_e( '[Who We Serve — coming soon]', 'wp-test-site' ); ?></p>
+			<div class="layout layout--cols-2 gap-2xl items-center">
+				<div class="two-col-section__text">
+					<h2 class="two-col-section__heading"><?php esc_html_e( 'Who We Serve', 'wp-test-site' ); ?></h2>
+					<p class="two-col-section__body">
+						<?php esc_html_e( 'We work with organizations that are ready to grow — businesses that know where they want to go but need the right partner to help them get there. Whether you\'re a startup building your brand from scratch, a mid-sized company ready to level up your marketing, or an established business navigating a digital transformation, we\'ve been there before. Our clients come from a wide range of industries, but they share one thing in common: a commitment to doing things right. We bring the same commitment to every engagement, no matter the size of the project or the stage of the business.', 'wp-test-site' ); ?>
+					</p>
+				</div>
+				<div class="two-col-section__image">
+					<img
+						src="https://picsum.photos/600/480?random=10"
+						alt="<?php esc_attr_e( 'Who we serve', 'wp-test-site' ); ?>"
+					>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -149,7 +166,20 @@ get_header();
 
 	<section class="section section--why-we-do-it why-we-do-it py-2xl">
 		<div class="content-wrap">
-			<p class="text-muted text-center"><?php esc_html_e( '[Why We Do It — coming soon]', 'wp-test-site' ); ?></p>
+			<div class="layout layout--cols-2 gap-2xl items-center">
+				<div class="two-col-section__image">
+					<img
+						src="https://picsum.photos/600/480?random=20"
+						alt="<?php esc_attr_e( 'Why we do it', 'wp-test-site' ); ?>"
+					>
+				</div>
+				<div class="two-col-section__text">
+					<h2 class="two-col-section__heading"><?php esc_html_e( 'Why We Do It', 'wp-test-site' ); ?></h2>
+					<p class="two-col-section__body">
+						<?php esc_html_e( 'We got into this work because we believed business could be done differently — with more honesty, more care, and more of a long-term view. Too many organizations are sold quick fixes that don\'t hold up. We\'re here to build things that last. Every strategy we develop, every brand we shape, and every campaign we launch is grounded in a genuine desire to see our clients succeed. Not just in the short term, but in ways that compound over time. That\'s what gets us out of bed in the morning. That\'s why we do it.', 'wp-test-site' ); ?>
+					</p>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -158,7 +188,39 @@ get_header();
 
 	<section class="section section--social-proof social-proof py-2xl">
 		<div class="content-wrap">
-			<p class="text-muted text-center"><?php esc_html_e( '[Social Proof — coming soon]', 'wp-test-site' ); ?></p>
+			<div class="layout layout--cols-4 gap-md">
+
+				<?php
+				$testimonials = [
+					[
+						'body' => 'Working with this team completely changed how we think about our brand. They listened before they spoke, and what they delivered was exactly what we needed — clear, confident, and built to last.',
+						'name' => 'Sarah M., Founder &amp; CEO',
+					],
+					[
+						'body' => 'We\'d worked with other agencies before, but none of them got us the way this team did. The strategy they built has driven real, measurable results. I can\'t recommend them highly enough.',
+						'name' => 'James T., VP of Marketing',
+					],
+					[
+						'body' => 'From the first conversation to the final handoff, the process was smooth, transparent, and genuinely collaborative. They made a complex project feel manageable. We\'ll absolutely be back.',
+						'name' => 'Priya K., Director of Growth',
+					],
+					[
+						'body' => 'Our website traffic has doubled and our conversion rate is up 40% since we launched the new site. The team delivered beyond what we expected, on time and on budget.',
+						'name' => 'David R., Co-Founder',
+					],
+				];
+				?>
+
+				<?php foreach ( $testimonials as $testimonial ) : ?>
+					<div class="testimonial">
+						<blockquote class="testimonial__body">
+							<?php echo esc_html( $testimonial['body'] ); ?>
+						</blockquote>
+						<p class="testimonial__name"><?php echo wp_kses_post( $testimonial['name'] ); ?></p>
+					</div>
+				<?php endforeach; ?>
+
+			</div>
 		</div>
 	</section>
 

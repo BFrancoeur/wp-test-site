@@ -1,0 +1,70 @@
+/*
+ * components/testimonial.css
+ * Testimonial card — italic body text, semibold name. No headshot.
+ *
+ * Structure:
+ *   <div class="testimonial">
+ *     <blockquote class="testimonial__body">
+ *     <p class="testimonial__name">
+ *   </div>
+ */
+
+
+/* ── Card ────────────────────────────────────────────────────────────────────── */
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  background-color: var(--wp-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ── Body ────────────────────────────────────────────────────────────────────── */
+
+.testimonial__body {
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-loose);
+  color: var(--color-text);
+  border: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.testimonial__body::before {
+  content: '\201C';
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2);
+  font-style: normal;
+  line-height: 0.8;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+
+/* ── Name ────────────────────────────────────────────────────────────────────── */
+
+.testimonial__name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  font-style: normal;
+  color: var(--color-text);
+  padding-top: var(--space-sm);
+  border-top: var(--border-width-sm) solid var(--color-border);
+}
+
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .testimonial {
+    padding: var(--space-lg);
+  }
+}
