@@ -138,7 +138,23 @@ add_action( 'widgets_init', 'wp_test_site_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wp_test_site_scripts() {
-	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// Self-hosted fonts — Lora (headings) + Open Sans (body).
+	wp_enqueue_style(
+		'dovetail-fonts',
+		get_template_directory_uri() . '/css/fonts.css',
+		array(),
+		_S_VERSION
+	);
+
+	// Design tokens — must load before all other stylesheets.
+	wp_enqueue_style(
+		'dovetail-variables',
+		get_template_directory_uri() . '/css/variables.css',
+		array( 'dovetail-fonts' ),
+		_S_VERSION
+	);
+
+	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), array( 'dovetail-variables' ), _S_VERSION );
 	wp_style_add_data( 'wp-test-site-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wp-test-site-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

@@ -1,0 +1,171 @@
+/*
+ * variables.css
+ * Design tokens for the Dovetail system.
+ * All other stylesheets reference these — never hard-code values elsewhere.
+ */
+
+/* ── Fonts ─────────────────────────────────────────────────────────────────── */
+/* Lora (headings) and Open Sans (body) are loaded via wp_enqueue_style()      */
+/* in functions.php — do not @import here.                                     */
+/* Google Fonts URL for reference:                                             */
+/* https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap */
+
+:root {
+
+  /* ── WordPress Default Palette ─────────────────────────────────────────── */
+  /* Kept as-is so the block editor stays in sync with custom styles.         */
+
+  --wp-black:                  #000000; /* Black */
+  --wp-white:                  #ffffff; /* White */
+  --wp-cyan-bluish-gray:       #abb8c3;
+  --wp-pale-pink:              #f78da7;
+  --wp-vivid-red:              #cf2e2e;
+  --wp-luminous-vivid-orange:  #ff6900;
+  --wp-luminous-vivid-amber:   #fcb900;
+  --wp-light-green-cyan:       #7bdcb5;
+  --wp-vivid-green-cyan:       #00d084;
+  --wp-pale-cyan-blue:         #8ed1fc;
+  --wp-vivid-cyan-blue:        #0693e3;
+  --wp-vivid-purple:           #9b51e0;
+
+
+  /* ── Brand / Semantic Colors ───────────────────────────────────────────── */
+
+  --color-primary:             #42597B; /* Dusk Blue */
+  --color-secondary:           #C6B43F; /* Old Gold */
+  --color-tertiary:            #3C753A; /* Fern */
+  --color-dark-neutral:        #121214; /* Onyx */
+
+  --color-text:                #232323; /* Carbon Black */
+  --color-text-muted:          #707070; /* Dim Grey */
+  --color-background:          #FCFFF0; /* Ivory */
+  --color-surface:             #F0F2F5; /* Ghost White */
+  --color-border:              #B0B5B6; /* Silver */
+
+
+  /* ── Form Feedback / Validation ────────────────────────────────────────── */
+
+  --color-info:                #486B89; /* Blue Slate */
+  --color-success:             #3B8436; /* Forest Green */
+  --color-warning:             #D4A84F; /* Golden Bronze */
+  --color-attention:           #E07A3F; /* Burnt Orange */
+  --color-error:               #AD3E4D; /* Dusty Mauve */
+  --color-link-hover:          #6A2C70; /* Velvet Purple */
+
+
+  /* ── Breakpoints (reference only — cannot be used inside media queries) ── */
+
+  --breakpoint-mobile:         480px;
+  --breakpoint-tablet:         768px;
+  --breakpoint-laptop:         1024px;
+  --breakpoint-desktop:        1280px;
+  --breakpoint-wide:           1440px;
+
+
+  /* ── Typography ────────────────────────────────────────────────────────── */
+
+  --font-family-heading:       "Lora", Georgia, "Times New Roman", serif;
+  --font-family-base:          "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono:          "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Fluid type scale — clamp(min, intercept + slope*vw, max)
+     Viewport range: 480px (mobile) → 1440px (widescreen)                   */
+
+  --font-size-h1:              clamp(1.5rem,   0.25rem   + 4.167vw, 4rem);    /* 24px → 64px */
+  --font-size-h2:              clamp(1.25rem,  0.375rem  + 2.917vw, 3rem);    /* 20px → 48px */
+  --font-size-h3:              clamp(1.125rem, 0.5625rem + 1.875vw, 2.25rem); /* 18px → 36px */
+  --font-size-h4:              clamp(1rem,     0.625rem  + 1.25vw,  1.75rem); /* 16px → 28px */
+  --font-size-base:            clamp(0.875rem, 0.5625rem + 1.042vw, 1.5rem);  /* 14px → 24px */
+  --font-size-sm:              clamp(0.75rem,  0.6875rem + 0.208vw, 0.875rem);/* 12px → 14px */
+
+  /* Small text usage:
+     - Comments, testimonials, captions: --font-size-sm, font-weight: 600
+     - Captions only: also font-style: italic                                */
+
+  --font-weight-normal:        400;
+  --font-weight-medium:        500;
+  --font-weight-semibold:      600;
+  --font-weight-bold:          700;
+
+  --line-height-tight:         1.2;
+  --line-height-snug:          1.4;
+  --line-height-base:          1.5;
+  --line-height-loose:         1.8;
+
+  --letter-spacing-tight:      -0.02em;
+  --letter-spacing-normal:      0;
+  --letter-spacing-wide:        0.05em;
+  --letter-spacing-wider:       0.1em;
+
+
+  /* ── Spacing ────────────────────────────────────────────────────────────── */
+  /* Base unit: 4px. Scale: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128  */
+
+  --space-xs:                  0.25rem;  /*  4px */
+  --space-sm:                  0.5rem;   /*  8px */
+  --space-md:                  1rem;     /* 16px */
+  --space-lg:                  1.5rem;   /* 24px */
+  --space-xl:                  2rem;     /* 32px */
+  --space-2xl:                 3rem;     /* 48px */
+  --space-3xl:                 4rem;     /* 64px */
+  --space-4xl:                 6rem;     /* 96px */
+  --space-5xl:                 8rem;     /* 128px */
+
+
+  /* ── Borders ────────────────────────────────────────────────────────────── */
+
+  --border-width-sm:           1px;
+  --border-width-md:           2px;
+  --border-width-lg:           4px;
+
+  --border-radius-sm:          0.25rem;  /*  4px */
+  --border-radius-md:          0.5rem;   /*  8px */
+  --border-radius-lg:          1rem;     /* 16px */
+  --border-radius-xl:          1.5rem;   /* 24px */
+  --border-radius-full:        9999px;
+
+
+  /* ── Shadows ─────────────────────────────────────────────────────────────── */
+
+  --shadow-sm:                 0 1px 2px rgba(0, 0, 0, 0.06),
+                               0 1px 3px rgba(0, 0, 0, 0.10);
+
+  --shadow-md:                 0 4px 6px rgba(0, 0, 0, 0.07),
+                               0 2px 4px rgba(0, 0, 0, 0.06);
+
+  --shadow-lg:                 0 10px 15px rgba(0, 0, 0, 0.08),
+                               0  4px 6px rgba(0, 0, 0, 0.05);
+
+  --shadow-xl:                 0 20px 25px rgba(0, 0, 0, 0.10),
+                               0  8px 10px rgba(0, 0, 0, 0.06);
+
+  --shadow-inner:              inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+
+  /* ── Transitions ─────────────────────────────────────────────────────────── */
+
+  --transition-fast:           150ms ease;
+  --transition-base:           250ms ease;
+  --transition-slow:           400ms ease;
+  --transition-bounce:         300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+  /* ── Z-index ─────────────────────────────────────────────────────────────── */
+
+  --z-below:                   -1;
+  --z-base:                     0;
+  --z-raised:                   10;
+  --z-dropdown:                 100;
+  --z-sticky:                   200;
+  --z-overlay:                  300;
+  --z-modal:                    400;
+  --z-toast:                    500;
+
+
+  /* ── Layout ──────────────────────────────────────────────────────────────── */
+
+  --content-width:             70rem;    /* 1120px — main content max-width */
+  --content-width-narrow:      42rem;    /*  672px — prose / single-column  */
+  --content-width-wide:        90rem;    /* 1440px — full-bleed sections     */
+
+}
