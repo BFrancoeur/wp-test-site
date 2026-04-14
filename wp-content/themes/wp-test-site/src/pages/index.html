@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site</title>
+
+  <!-- Tokens first — everything references these -->
+  <link rel="stylesheet" href="/css/variables.css">
+
+  <!-- Base styles — reset and root typography -->
+  <link rel="stylesheet" href="/css/base.css">
+
+  <!-- Utilities — spacing, layout, text helpers -->
+  <link rel="stylesheet" href="/css/utilities.css">
+
+  <!-- Components — each self-contained -->
+  <link rel="stylesheet" href="/css/components/btn.css">
+  <link rel="stylesheet" href="/css/components/service-card.css">
+  <link rel="stylesheet" href="/css/components/hero.css">
+</head>
+<body>
+
+  {[ section: site-header | class: site-header ]}
+    <!-- navigation — separate task -->
+  {[/ section: site-header ]}
+
+  {[ section: hero | class: hero hero--dark ]}
+    {[ component: hero ]}
+  {[/ section: hero ]}
+
+  {[ section: services | class: services py-2xl ]}
+    {[ layout: cols=1 | class: content-wrap ]}
+      {[ content: services-title ]}
+      {[ layout: cols=3, wrap=true, gap=md | class: services__grid mt-lg ]}
+        {[ component: service-card ]}
+        {[ component: service-card ]}
+        {[ component: service-card ]}
+        {[ component: service-card ]}
+        {[ component: service-card ]}
+        {[ component: service-card ]}
+      {[/ layout: services-grid ]}
+    {[/ layout: content-wrap ]}
+  {[/ section: services ]}
+
+  {[ section: about | class: about py-2xl ]}
+  {[/ section: about ]}
+
+  {[ section: who-we-serve | class: who-we-serve py-2xl ]}
+  {[/ section: who-we-serve ]}
+
+  {[ section: why-we-do-it | class: why-we-do-it py-2xl ]}
+  {[/ section: why-we-do-it ]}
+
+  {[ section: social-proof | class: social-proof py-2xl ]}
+  {[/ section: social-proof ]}
+
+  {[ section: cta | class: cta cta--dark py-2xl ]}
+  {[/ section: cta ]}
+
+  {[ section: site-footer | class: site-footer py-xl ]}
+  {[/ section: site-footer ]}
+
+</body>
+</html>
