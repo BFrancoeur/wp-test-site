@@ -240,7 +240,8 @@
 .py-xl   { padding-block: var(--space-xl); }
 .py-2xl  { padding-block: var(--space-2xl); }
 .py-3xl  { padding-block: var(--space-3xl); }
-.py-4xl  { padding-block: var(--space-4xl); }
+.py-4xl     { padding-block: var(--space-4xl); }
+.py-section { padding-block: var(--space-section); }
 
 
 /* ── Display ─────────────────────────────────────────────────────────────────── */
