@@ -225,7 +225,7 @@ get_header();
 
 	<section class="section section--cta cta cta--green py-section">
 		<div class="content-wrap text-center">
-			<h2 class="text-white"><?php esc_html_e( 'Ready to get started?', 'wp-test-site' ); ?></h2>
+			<h2 class="text-secondary"><?php esc_html_e( 'Ready to get started?', 'wp-test-site' ); ?></h2>
 			<p class="text-white mt-md"><?php esc_html_e( 'Let\'s talk about what we can build together.', 'wp-test-site' ); ?></p>
 			<a href="#" class="btn btn--large btn--white mt-xl"><?php esc_html_e( 'Get In Touch', 'wp-test-site' ); ?></a>
 		</div>
