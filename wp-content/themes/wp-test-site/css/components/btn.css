@@ -1,0 +1,162 @@
+/*
+ * components/btn.css
+ * Button component — base + size, color, and style modifiers.
+ *
+ * Variants:
+ *   Size:   btn--small | btn--medium | btn--large
+ *   Color:  btn--primary | btn--secondary | btn--white
+ *   Style:  btn--outline
+ *   Layout: btn--full
+ *   State:  [disabled] / .btn--disabled
+ */
+
+
+/* ── Base ────────────────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary);
+  color: var(--wp-white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-wide);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: var(--border-width-md) solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-color     var(--transition-fast),
+    color            var(--transition-fast),
+    box-shadow       var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  appearance: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--color-dark-neutral);
+  border-color: var(--color-dark-neutral);
+  color: var(--wp-white);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+
+/* ── Size Modifiers ──────────────────────────────────────────────────────────── */
+
+.btn--small {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.btn--medium {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-base);
+}
+
+.btn--large {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--font-size-h4);
+  border-radius: var(--border-radius-lg);
+}
+
+
+/* ── Color Modifiers ─────────────────────────────────────────────────────────── */
+
+/* Primary — default, defined on base */
+
+/* Secondary */
+.btn--secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-dark-neutral);
+}
+
+.btn--secondary:hover,
+.btn--secondary:focus-visible {
+  background-color: var(--color-dark-neutral);
+  border-color: var(--color-dark-neutral);
+  color: var(--wp-white);
+}
+
+/* White — for use on dark/image backgrounds */
+.btn--white {
+  background-color: var(--wp-white);
+  border-color: var(--wp-white);
+  color: var(--color-primary);
+}
+
+.btn--white:hover,
+.btn--white:focus-visible {
+  background-color: var(--color-background);
+  border-color: var(--color-background);
+  color: var(--color-dark-neutral);
+}
+
+
+/* ── Style Modifiers ─────────────────────────────────────────────────────────── */
+
+/* Outline — transparent background, colored border */
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--wp-white);
+}
+
+/* Outline on dark backgrounds */
+.btn--outline.btn--white {
+  background-color: transparent;
+  border-color: var(--wp-white);
+  color: var(--wp-white);
+}
+
+.btn--outline.btn--white:hover,
+.btn--outline.btn--white:focus-visible {
+  background-color: var(--wp-white);
+  border-color: var(--wp-white);
+  color: var(--color-primary);
+}
+
+
+/* ── Layout Modifier ─────────────────────────────────────────────────────────── */
+
+.btn--full {
+  display: flex;
+  width: 100%;
+}
+
+
+/* ── Disabled State ──────────────────────────────────────────────────────────── */
+
+.btn:disabled,
+.btn--disabled {
+  background-color: var(--color-border);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
