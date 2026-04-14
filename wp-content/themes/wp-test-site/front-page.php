@@ -223,7 +223,7 @@ get_header();
 
 	<!-- ── CTA ───────────────────────────────────────────────────────────────── -->
 
-	<section class="section section--cta cta cta--dark py-2xl">
+	<section class="section section--cta cta cta--green py-section">
 		<div class="content-wrap text-center">
 			<h2 class="text-white"><?php esc_html_e( 'Ready to get started?', 'wp-test-site' ); ?></h2>
 			<p class="text-white mt-md"><?php esc_html_e( 'Let\'s talk about what we can build together.', 'wp-test-site' ); ?></p>

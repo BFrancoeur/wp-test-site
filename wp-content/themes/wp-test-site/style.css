@@ -46,6 +46,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   background-color: var(--color-dark-neutral);
 }
 
+.cta--green {
+  background-color: var(--color-tertiary);
+}
+
 .cta .content-wrap {
   display: flex;
   flex-direction: column;
