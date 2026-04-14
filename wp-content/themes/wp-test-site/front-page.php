@@ -182,7 +182,7 @@ get_header();
 
 	<!-- ── Social Proof ──────────────────────────────────────────────────────── -->
 
-	<section class="section section--social-proof social-proof py-2xl">
+	<section class="section section--social-proof social-proof py-3xl">
 		<div class="content-wrap">
 			<div class="layout layout--cols-4 gap-md">
 
