@@ -1,0 +1,59 @@
+# ── WordPress Core ────────────────────────────────────────
+/wp-admin/
+/wp-includes/
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+/index.php
+/license.txt
+/readme.html
+
+# ── WordPress Content — generated / uploaded ──────────────
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/blogs.dir/
+
+# ── Default themes (not ours) ─────────────────────────────
+wp-content/themes/twenty*/
+wp-content/themes/index.php
+
+# ── Default plugins ───────────────────────────────────────
+wp-content/plugins/hello.php
+wp-content/plugins/akismet/
+wp-content/plugins/index.php
+
+# ── Credentials and environment ───────────────────────────
+wp-config.php
+.env
+.env.*
+
+# ── Local by Flywheel ─────────────────────────────────────
+local-xdebuginfo.php
+
+# ── Node ──────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+.npm
+
+# ── OS ────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editors ───────────────────────────────────────────────
+*.swp
+*.swo
+.idea/
