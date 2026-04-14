@@ -178,7 +178,15 @@ function wp_test_site_scripts() {
 		_S_VERSION
 	);
 
-	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), [ 'dovetail-btn' ], _S_VERSION );
+	// Component: hero.
+	wp_enqueue_style(
+		'dovetail-hero',
+		get_template_directory_uri() . '/css/components/hero.css',
+		[ 'dovetail-btn' ],
+		_S_VERSION
+	);
+
+	wp_enqueue_style( 'wp-test-site-style', get_stylesheet_uri(), [ 'dovetail-hero' ], _S_VERSION );
 	wp_style_add_data( 'wp-test-site-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'wp-test-site-navigation', get_template_directory_uri() . '/js/navigation.js', [], _S_VERSION, true );
