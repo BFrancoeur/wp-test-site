@@ -22,8 +22,51 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
+/*
+ * style.css
+ * Theme-level styles — global section rules and page-specific overrides.
+ * Component styles live in css/components/. Tokens in css/variables.css.
+ */
+
+
+/* ── Section Base ────────────────────────────────────────────────────────────── */
+
+.section {
+  width: 100%;
+}
+
+
+/* ── CTA Section ─────────────────────────────────────────────────────────────── */
+
+.cta {
+  background-color: var(--color-primary);
+}
+
+.cta--dark {
+  background-color: var(--color-dark-neutral);
+}
+
+.cta .content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ── Services Section ────────────────────────────────────────────────────────── */
+
+.services__title {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.services__title h2 {
+  color: var(--color-text);
+}
+
+
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
+>>> TABLE OF CONTENTS (legacy — to be removed as sections are built):
 ----------------------------------------------------------------
 # Generic
 	- Normalize
