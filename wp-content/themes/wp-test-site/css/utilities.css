@@ -39,8 +39,24 @@
 .layout--cols-6  { grid-template-columns: repeat(6,  1fr); }
 .layout--cols-12 { grid-template-columns: repeat(12, 1fr); }
 
-.layout--wrap {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+/* layout--wrap collapses columns responsively — does not override col count */
+@media (max-width: 767px) {
+  .layout--wrap.layout--cols-2,
+  .layout--wrap.layout--cols-3,
+  .layout--wrap.layout--cols-4,
+  .layout--wrap.layout--cols-5,
+  .layout--wrap.layout--cols-6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .layout--wrap.layout--cols-3,
+  .layout--wrap.layout--cols-4,
+  .layout--wrap.layout--cols-5,
+  .layout--wrap.layout--cols-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .layout--align-center  { align-items: center; }
