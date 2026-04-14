@@ -1,0 +1,315 @@
+/*
+ * base.css
+ * Modern CSS reset + root element and global typography styles.
+ * All values reference tokens from variables.css.
+ */
+
+
+/* ── Reset ───────────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* ── Headings ────────────────────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+
+/* h5 and h6 — treated as labels/eyebrows, not content headings */
+h5,
+h6 {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+}
+
+
+/* ── Body Text ───────────────────────────────────────────────────────────────── */
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+
+p + p {
+  margin-top: var(--space-md);
+}
+
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+
+/* ── Small Text ──────────────────────────────────────────────────────────────── */
+/* Used for: comments, testimonials, captions                                    */
+
+small,
+.text-small {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+figcaption {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  font-style: italic;
+  line-height: var(--line-height-snug);
+  color: var(--color-text-muted);
+  margin-top: var(--space-xs);
+}
+
+
+/* ── Links ───────────────────────────────────────────────────────────────────── */
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-link-hover);
+}
+
+
+/* ── Lists ───────────────────────────────────────────────────────────────────── */
+
+/* Restore list styles only inside prose content */
+.entry-content ul,
+.entry-content ol {
+  list-style: revert;
+  padding-left: var(--space-lg);
+}
+
+.entry-content li + li {
+  margin-top: var(--space-xs);
+}
+
+
+/* ── Blockquote ──────────────────────────────────────────────────────────────── */
+
+blockquote {
+  border-left: var(--border-width-lg) solid var(--color-primary);
+  padding: var(--space-sm) var(--space-lg);
+  margin: var(--space-lg) 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: var(--font-size-md, 1.2rem);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+
+/* ── Code ────────────────────────────────────────────────────────────────────── */
+
+code,
+kbd,
+samp {
+  font-family: var(--font-family-mono);
+  font-size: 0.9em;
+  background-color: var(--color-surface);
+  border: var(--border-width-sm) solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  padding: 0.1em 0.4em;
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-dark-neutral);
+  color: var(--color-background);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-lg);
+  overflow-x: auto;
+  line-height: var(--line-height-loose);
+}
+
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+
+/* ── Horizontal Rule ─────────────────────────────────────────────────────────── */
+
+hr {
+  border: none;
+  border-top: var(--border-width-sm) solid var(--color-border);
+  margin: var(--space-2xl) 0;
+}
+
+
+/* ── Forms (base) ────────────────────────────────────────────────────────────── */
+
+label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border: var(--border-width-sm) solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(66, 89, 123, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+
+/* ── Focus (accessibility) ───────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: var(--border-width-md) solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+}
+
+
+/* ── Media ───────────────────────────────────────────────────────────────────── */
+
+figure {
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
