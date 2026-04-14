@@ -75,10 +75,13 @@
 
 .service-card__heading {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-snug);
   color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .service-card__description {
